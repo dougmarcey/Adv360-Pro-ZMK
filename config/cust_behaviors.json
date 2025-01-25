@@ -1,11 +1,11 @@
 [
-  {
-    "code": "&hm",
-    "name": "Home Row Tap",
-    "description": "Home Row Tap",
-    "params": ["code", "code"],
-    "isModifier": false,
-    "isNew" : true,
-    "type" : "UD"
-  }
+	{
+		"code": "&hm",
+		"name": "Home Row Tap",
+		"params": [
+			"code",
+			"code"
+		],
+		"type": "UD"
+	}
 ]
