@@ -61,7 +61,7 @@
         layer_MACSC {
             bindings = <
  &trans  &trans         &trans                    &trans                &trans            &trans              &trans                                                       &kp LA(LC(INS))         &trans              &trans             &trans               &trans    &trans  &trans
- &trans  &trans     &kp C_MUTE              &kp C_VOL_DN          &kp C_VOL_DN     &kp LG(EQUAL)              &trans                                                                &trans    &kp PAGE_UP  &kp LG(LEFT_ARROW)       &kp UP_ARROW  &kp LG(RIGHT_ARROW)  &kp HOME  &trans
+ &trans  &trans     &kp C_MUTE              &kp C_VOL_DN          &kp C_VOL_UP     &kp LG(EQUAL)              &trans                                                                &trans    &kp PAGE_UP  &kp LG(LEFT_ARROW)       &kp UP_ARROW  &kp LG(RIGHT_ARROW)  &kp HOME  &trans
  &trans  &trans      &kp LSHFT              &kp LG(BSPC)         &kp BACKSPACE     &kp LG(MINUS)              &trans     &trans    &trans                  &trans  &trans           &trans        &kp TAB      &kp LEFT_ARROW     &kp DOWN_ARROW      &kp RIGHT_ARROW   &kp RET  &trans
  &trans   &to 5  &kp LC(LG(Q))  &kp LC(LG(LS(NUMBER_4)))  &kp LG(LS(NUMBER_5))  &kp LG(NUMBER_0)                                   &kp UP                  &trans                           &kp PAGE_DOWN  &kp LA(LEFT_ARROW)  &kp LA(BACKSPACE)  &kp LA(RIGHT_ARROW)   &kp END  &trans
  &trans  &trans         &trans                    &trans                &trans                              &kp LEFT  &kp RIGHT  &kp DOWN                  &trans  &trans           &trans                             &trans             &trans               &trans    &trans  &trans
