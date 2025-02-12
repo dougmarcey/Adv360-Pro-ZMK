@@ -36,6 +36,18 @@
             bindings = <&kp A>;
             label = "NEW_MACRO";
         };
+  macro_quotes: macro_quotes{
+    compatible = "zmk,behavior-macro";
+    display-name = "macro_quotes";
+    #binding-cells = <0>;
+    bindings = <&kp SQT>, <&kp SQT>, <&kp LEFT>;
+  };
+  macro_dquotes: macro_dquotes{
+    compatible = "zmk,behavior-macro";
+    display-name = "macro_dquotes";
+    #binding-cells = <0>;
+    bindings = <&kp DQT>, <&kp DQT>, <&kp LEFT>;
+  };
       #include "macros.dtsi"
     };
 
