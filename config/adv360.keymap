@@ -261,6 +261,46 @@
             bindings = <&mkp MB1 &mkp MB1>;
             display-name = "Double Click";
         };
+
+        goeq: goeq {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp COLON &kp EQUAL>;
+            label = "GOEQ";
+        };
+
+        larrow: larrow {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LESS_THAN &kp MINUS>;
+            label = "LARROW";
+        };
+
+        rarrow: rarrow {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp MINUS &kp GT>;
+            label = "RARROW";
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        combo_goeq {
+            bindings = <&goeq>;
+            key-positions = <44 19>;
+        };
+
+        combo_rarrow {
+            bindings = <&rarrow>;
+            key-positions = <44 18>;
+        };
+
+        combo_larrow {
+            bindings = <&larrow>;
+            key-positions = <44 17>;
+        };
     };
 
     keymap {
@@ -269,33 +309,33 @@
         default_layer {
             display-name = "Base";
             bindings = <
-&kp GRAVE                              &kp N1                      &kp N2       &kp N3       &kp N4         &kp N5               &kp NUMBER_6                                                                                                         &mt LA(LS(LC(F3))) NUMBER_6     &kp N6  &kp N7          &kp N8     &kp N9    &kp N0                       &kp MINUS
-&kp TAB                                &kp Q                       &kp W        &kp E        &kp R          &kp T                &mt LC(LS(LA(F1))) LEFT_BRACE                                                                                        &mt LC(LS(LA(F2))) RIGHT_BRACE  &kp Y   &kp U           &kp I      &kp O     &kp P                        &kp BSLH
-&mt LCTRL ESC                          &lt 2 A                     &kp S        &kp D        &kp F          &kp G                &lt 1 LEFT_BRACKET             &kp LEFT      &kp RIGHT                       &kp UP                   &kp DOWN       &lt 1 RIGHT_BRACKET             &kp H   &kp J           &kp K      &kp L     &kp SEMI                     &lt 1 SINGLE_QUOTE
-&kp LSHFT                              &hm LG(Z) Z                 &hm LG(X) X  &hm LG(C) C  &hm LG(V) V    &hm LA(LS(LG(V))) B                                               &tog 4                          &mo 3                                                                   &kp N   &kp M           &kp COMMA  &kp DOT   &kp FSLH                     &kp RSHFT
-&mt LC(LS(LA(LGUI))) LEFT_PARENTHESIS  &mt LCTRL LEFT_PARENTHESIS  &kp LALT     &kp EQUAL    &macro_quotes                       &mt LGUI SPACE                 &mt LALT RET  &mt LC(LS(LALT)) BACKSPACE      &mt LC(LS(LALT)) DELETE  &kp BACKSPACE  &kp SPACE                               &macro_dquotes  &kp PLUS   &kp LALT  &mt LCTRL RIGHT_PARENTHESIS  &mt LC(LS(LA(LGUI))) RIGHT_PARENTHESIS
+&kp GRAVE                              &kp N1                      &kp N2       &kp N3       &kp N4       &kp N5               &kp NUMBER_6                                                                                                                 &mt LA(LS(LC(F3))) NUMBER_6     &kp N6  &kp N7          &kp N8     &kp N9    &kp N0                       &kp MINUS
+&mt LC(TAB) TAB                        &kp Q                       &kp W        &kp E        &kp R        &kp T                &mt LC(LS(LA(F1))) LEFT_BRACE                                                                                                &mt LC(LS(LA(F2))) RIGHT_BRACE  &kp Y   &kp U           &kp I      &kp O     &kp P                        &kp BSLH
+&mt LCTRL ESC                          &lt 2 A                     &kp S        &kp D        &kp F        &kp G                &lt 1 LEFT_BRACKET             &sk LA(LC(LEFT_SHIFT))  &to 4                &mo 3                    &caps_word              &lt 1 RIGHT_BRACKET             &kp H   &kp J           &kp K      &kp L     &kp SEMI                     &lt 1 SINGLE_QUOTE
+&kp LSHFT                              &hm LG(Z) Z                 &hm LG(X) X  &hm LG(C) C  &hm LG(V) V  &hm LA(LS(LG(V))) B                                                         &sk LEFT_SHIFT       &sk LEFT_ALT                                                                     &kp N   &kp M           &kp COMMA  &kp DOT   &kp FSLH                     &kp RSHFT
+&mt LC(LS(LA(LGUI))) LEFT_PARENTHESIS  &mt LCTRL LEFT_PARENTHESIS  &kp LALT     &kp LA(F7)   &kp LS(F6)                        &mt LGUI SPACE                 &mt LALT RET            &lt 1 BACKSPACE      &mt LC(LS(LALT)) DELETE  &mt LEFT_ALT BACKSPACE  &kp SPACE                               &macro_dquotes  &kp PLUS   &kp LALT  &mt LCTRL RIGHT_PARENTHESIS  &mt LC(LS(LA(LGUI))) RIGHT_PARENTHESIS
             >;
         };
 
         fnkpsym {
             display-name = "FnKpSym";
             bindings = <
-&kp TILDE          &kp F1           &kp F2       &kp F3         &kp F4            &kp F5        &none                                       &none   &kp F6     &kp F7        &kp F8        &kp F9      &kp F10       &kp F11
-&kp K_APPLICATION  &kp EXCLAMATION  &kp AT_SIGN  &kp MINUS      &kp UNDERSCORE    &kp QUESTION  &none                                       &none   &kp MINUS  &kp NUMBER_7  &kp NUMBER_8  &kp N9      &kp SLASH     &kp F12
-&caps_word         &kp HASH         &kp DOLLAR   &kp PLUS       &kp COLON         &kp EQUAL     &trans  &trans  &trans      &trans  &trans  &trans  &kp PLUS   &kp N4        &kp N5        &kp N6      &kp ASTERISK  &trans
-&kp LSHFT          &kp PERCENT      &kp CARET    &kp ASTERISK   &kp AMPERSAND     &kp PIPE                      &trans      &trans                  &kp EQUAL  &kp N1        &kp N2        &kp N3      &kp ENTER     &kp RSHFT
-&trans             &trans           &trans       &kp LESS_THAN  &kp GREATER_THAN                &trans  &trans  &trans      &trans  &trans  &trans             &kp N0        &kp N0        &kp PERIOD  &kp RETURN    &mo 2
+&kp TILDE   &kp F1           &kp F2        &kp F3          &kp F4            &kp F5             &none                                       &none   &kp F6     &kp F7        &kp F8        &kp F9      &kp F10       &kp F11
+&caps_word  &kp EXCLAMATION  &kp AT_SIGN   &kp HASH        &kp LPAR          &kp RPAR           &none                                       &none   &kp MINUS  &kp NUMBER_7  &kp NUMBER_8  &kp N9      &kp SLASH     &kp F12
+&trans      &kp DOLLAR       &kp PERCENT   &kp CARET       &kp LEFT_BRACE    &kp RIGHT_BRACE    &trans  &trans  &trans      &trans  &trans  &trans  &kp PLUS   &kp N4        &kp N5        &kp N6      &kp ASTERISK  &trans
+&trans      &kp AMPS         &kp ASTERISK  &kp UNDERSCORE  &kp LEFT_BRACKET  &kp RIGHT_BRACKET                  &trans      &trans                  &kp EQUAL  &kp N1        &kp N2        &kp N3      &kp PERIOD    &mt RSHFT ENTER
+&trans      &trans           &trans        &kp LESS_THAN   &kp GREATER_THAN                     &trans  &trans  &trans      &trans  &trans  &kp N0             &kp N0        &kp N0        &kp PERIOD  &kp RETURN    &kp ENTER
             >;
         };
 
         macsc {
             display-name = "MacSC";
             bindings = <
-&trans  &trans  &trans                    &trans                    &trans                &trans            &trans                                             &kp LA(LC(INS))  &trans         &trans              &trans             &trans               &trans    &trans
-&trans  &trans  &kp C_MUTE                &kp C_VOL_DN              &kp C_VOL_UP          &kp LG(EQUAL)     &trans                                             &trans           &kp PAGE_UP    &kp LG(LEFT_ARROW)  &kp UP_ARROW       &kp LG(RIGHT_ARROW)  &kp HOME  &trans
-&trans  &trans  &kp LSHFT                 &kp LG(BSPC)              &kp BACKSPACE         &kp LG(MINUS)     &trans    &trans     &trans        &trans  &trans  &trans           &kp TAB        &kp LEFT_ARROW      &kp DOWN_ARROW     &kp RIGHT_ARROW      &kp RET   &trans
-&trans  &to 5   &Mac_Strike_Through_Text  &kp LC(LG(LS(NUMBER_4)))  &kp LG(LS(NUMBER_5))  &kp LG(NUMBER_0)                       &kp UP        &trans                           &kp PAGE_DOWN  &kp LA(LEFT_ARROW)  &kp LA(BACKSPACE)  &kp LA(RIGHT_ARROW)  &kp END   &trans
-&trans  &trans  &trans                    &trans                    &trans                                  &kp LEFT  &kp RIGHT  &kp DOWN      &trans  &trans  &trans                          &trans              &trans             &trans               &trans    &trans
+&trans  &trans  &trans                    &trans                    &trans                &trans            &trans                                                                                     &kp LA(LC(INS))  &trans          &trans              &trans             &trans               &trans    &trans
+&trans  &trans  &kp C_MUTE                &kp C_VOL_DN              &kp C_VOL_UP          &kp LG(EQUAL)     &trans                                                                                     &trans           &kp PAGE_UP     &kp LC(U)           &kp LC(A)          &kp LC(E)            &kp HOME  &trans
+&trans  &trans  &kp LSHFT                 &kp LG(BSPC)              &kp BACKSPACE         &kp LG(MINUS)     &trans                   &trans              &trans        &trans  &trans                  &trans           &kp LEFT_ARROW  &kp DOWN            &kp UP             &kp RIGHT_ARROW      &kp TAB   &trans
+&trans  &to 5   &Mac_Strike_Through_Text  &kp LC(LG(LS(NUMBER_4)))  &kp LG(LS(NUMBER_5))  &kp LG(NUMBER_0)                                               &kp UP        &trans                                           &kp PAGE_DOWN   &kp LA(LEFT_ARROW)  &kp LA(BACKSPACE)  &kp LA(RIGHT_ARROW)  &kp END   &trans
+&trans  &trans  &trans                    &trans                    &trans                                  &mt LEFT_GUI LEFT_ARROW  &mt LEFT_ALT RIGHT  &kp DOWN      &trans  &mt LEFT_GUI BACKSPACE  &trans                           &trans              &trans             &trans               &trans    &trans
             >;
         };
 
@@ -313,11 +353,11 @@
         win {
             display-name = "Win";
             bindings = <
-&trans  &trans  &trans        &trans  &trans  &trans  &trans                                                                          &trans  &trans  &trans  &trans  &trans    &trans  &trans
-&trans  &trans  &trans        &trans  &trans  &trans  &trans                                                                          &trans  &trans  &trans  &trans  &trans    &trans  &trans
-&trans  &trans  &trans        &trans  &trans  &trans  &trans           &trans  &trans                           &trans        &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans
-&trans  &trans  &trans        &trans  &trans  &trans                           &trans                           &trans                        &trans  &trans  &trans  &trans    &trans  &trans
-&trans  &trans  &kp LEFT_GUI  &trans  &trans          &mt LCTRL SPACE  &trans  &mt K_APPLICATION BACKSPACE      &mt LGUI DEL  &trans  &trans          &trans  &trans  &kp LGUI  &trans  &trans
+&trans  &trans       &trans        &trans       &trans       &trans               &trans                                                                                      &trans  &trans  &trans  &trans  &trans    &trans  &trans
+&trans  &trans       &trans        &trans       &trans       &trans               &trans                                                                                      &trans  &trans  &trans  &trans  &trans    &trans  &trans
+&trans  &trans       &trans        &trans       &trans       &trans               &trans           &trans              &trans                           &trans        &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans
+&trans  &hm LC(Z) Z  &hm LC(X) X   &hm LC(C) C  &hm LC(V) V  &hm LA(LS(LC(V))) B                                       &trans                           &trans                        &trans  &trans  &trans  &trans    &trans  &trans
+&trans  &trans       &kp LEFT_GUI  &kp K_APP    &trans                            &mt LCTRL SPACE  &mt LEFT_GUI ENTER  &mt K_APPLICATION BACKSPACE      &mt LGUI DEL  &trans  &trans          &trans  &trans  &kp LGUI  &trans  &trans
             >;
         };
 
