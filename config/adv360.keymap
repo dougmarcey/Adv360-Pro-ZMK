@@ -355,7 +355,7 @@
             bindings = <
 &trans  &trans       &trans        &trans       &trans       &trans               &trans                                                                                      &trans  &trans  &trans  &trans  &trans    &trans  &trans
 &trans  &trans       &trans        &trans       &trans       &trans               &trans                                                                                      &trans  &trans  &trans  &trans  &trans    &trans  &trans
-&trans  &trans       &trans        &trans       &trans       &trans               &trans           &trans              &trans                           &trans        &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans
+&trans  &lt 7 A      &trans        &trans       &trans       &trans               &trans           &trans              &trans                           &trans        &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans
 &trans  &hm LC(Z) Z  &hm LC(X) X   &hm LC(C) C  &hm LC(V) V  &hm LA(LS(LC(V))) B                                       &trans                           &trans                        &trans  &trans  &trans  &trans    &trans  &trans
 &trans  &trans       &kp LEFT_GUI  &kp K_APP    &trans                            &mt LCTRL SPACE  &mt LEFT_GUI ENTER  &mt K_APPLICATION BACKSPACE      &mt LGUI DEL  &trans  &trans          &trans  &trans  &kp LGUI  &trans  &trans
             >;
@@ -383,24 +383,15 @@
             >;
         };
 
-        extra1 {
-            display-name = "Red";
-            status = "reserved";
-        };
-
-        extra2 {
-            display-name = "Purple";
-            status = "reserved";
-        };
-
-        extra3 {
-            display-name = "Cyan";
-            status = "reserved";
-        };
-
-        extra4 {
-            display-name = "Yellow";
-            status = "reserved";
+        WinSC {
+            display-name = "WinSC";
+            bindings = <
+&trans  &trans  &trans      &trans         &trans         &kp LA(F4)        &trans                                                                                  &kp LA(LC(DELETE))  &trans          &trans              &trans             &trans               &trans    &trans
+&trans  &trans  &kp C_MUTE  &kp C_VOL_DN   &kp C_VOL_UP   &kp LC(EQUAL)     &trans                                                                                  &trans              &kp PAGE_UP     &kp LC(U)           &kp LC(A)          &kp LC(E)            &kp HOME  &trans
+&trans  &trans  &kp LSHFT   &kp LC(D)      &kp BACKSPACE  &kp LC(MINUS)     &trans                &trans              &trans        &trans  &trans                  &trans              &kp LEFT_ARROW  &kp DOWN            &kp UP             &kp RIGHT_ARROW      &kp TAB   &trans
+&trans  &to 5   &kp LA(K)   &kp LG(LS(S))  &kp LG(LS(S))  &kp LC(NUMBER_0)                                            &kp UP        &trans                                              &kp PAGE_DOWN   &kp LC(LEFT_ARROW)  &kp LC(BACKSPACE)  &kp LC(RIGHT_ARROW)  &kp END   &trans
+&trans  &trans  &trans      &trans         &trans                           &mt LCTRL LEFT_ARROW  &mt LEFT_ALT RIGHT  &kp DOWN      &trans  &mt LEFT_GUI BACKSPACE  &trans                              &trans              &trans             &trans               &trans    &trans
+            >;
         };
     };
 };
